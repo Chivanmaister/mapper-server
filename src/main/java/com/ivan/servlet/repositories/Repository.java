@@ -2,6 +2,7 @@ package com.ivan.servlet.repositories;
 
 import com.ivan.servlet.exceptions.InvalidClassException;
 import com.ivan.servlet.exceptions.ServiceException;
+import com.ivan.servlet.repositories.impl.BaseCoordinateDao;
 import com.ivan.servlet.repositories.impl.BaseRouteDao;
 import com.ivan.servlet.repositories.impl.BaseUserDao;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
@@ -17,14 +18,15 @@ public class Repository {
         setDataSource();
         repositoryMap.put(UserDao.class, new BaseUserDao(dataSource));
         repositoryMap.put(RouteDao.class, new BaseRouteDao(dataSource));
+        repositoryMap.put(CoordinateDao.class, new BaseCoordinateDao(dataSource));
     }
 
     private void setDataSource() {
         dataSource = new MysqlDataSource();
-        ( dataSource).setUser("mapperdb");
-        ((MysqlDataSource) dataSource).setPassword("Zarawa2410985");
-        ((MysqlDataSource) dataSource).setDatabaseName("mapper");
-        ((MysqlDataSource) dataSource).setUrl("jdbc:mysql://localhost:3306/mapper");
+        dataSource.setUser("mapperdb");
+        dataSource.setPassword("Zarawa2410985");
+        dataSource.setDatabaseName("mapper");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/mapper");
     }
 
     @SuppressWarnings("unchecked")

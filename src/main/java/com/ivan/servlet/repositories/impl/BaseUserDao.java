@@ -40,8 +40,6 @@ public class BaseUserDao implements UserDao {
                 user.setId(resultSet.getInt(1));
                 user.setEmail(resultSet.getString(2));
             }
-
-
         } catch (SQLException e) {
             throw new UserRepositoryException("Error getting user from database");
         } finally {
@@ -84,8 +82,6 @@ public class BaseUserDao implements UserDao {
                 user.setId(resultSet.getInt(1));
                 user.setEmail(resultSet.getString(2));
             }
-
-
         } catch (SQLException e) {
             throw new UserRepositoryException("Error getting user from database");
         } finally {
@@ -125,7 +121,6 @@ public class BaseUserDao implements UserDao {
                 user = new User();
                 user.setId(resultSet.getInt(1));
             }
-
         } catch (SQLException e) {
             throw new UserRepositoryException("Error adding user to database");
         } finally {

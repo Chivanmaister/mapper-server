@@ -3,6 +3,7 @@ package com.ivan.servlet.services;
 import com.ivan.servlet.exceptions.InvalidServiceExcepton;
 import com.ivan.servlet.exceptions.ServiceException;
 import com.ivan.servlet.repositories.Repository;
+import com.ivan.servlet.services.impl.DefaultCoordinateService;
 import com.ivan.servlet.services.impl.DefaultRouteService;
 import com.ivan.servlet.services.impl.DefaultUserService;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
@@ -16,7 +17,8 @@ public class RestService {
 
     public RestService() {
         serviceImpl.put(UserService.class, new DefaultUserService(this, new Repository()));
-        serviceImpl.put(RouteService.class, new DefaultRouteService(this, new Repository() ));
+        serviceImpl.put(RouteService.class, new DefaultRouteService(this, new Repository()));
+        serviceImpl.put(CoordinateService.class, new DefaultCoordinateService(this, new Repository()));
     }
 
     @SuppressWarnings("unchecked")

@@ -3,7 +3,7 @@ package com.ivan.servlet.rest.helper;
 import com.ivan.servlet.exceptions.InvalidMethodException;
 import com.ivan.servlet.exceptions.InvalidServiceExcepton;
 import com.ivan.servlet.exceptions.ServiceException;
-import com.ivan.servlet.rest.handlers.Handler;
+import com.ivan.servlet.handlers.Handler;
 import com.ivan.servlet.services.RestService;
 
 import java.lang.reflect.Constructor;
@@ -17,9 +17,10 @@ public class HandlerFactory {
     private static final String POST = "POST";
 
     public HandlerFactory() {
-        pathToMethod.putIfAbsent("/user/get", new ClassMethodCreator(com.ivan.servlet.rest.handlers.user.GetHandler.class, GET));
-        pathToMethod.putIfAbsent("/user/add", new ClassMethodCreator(com.ivan.servlet.rest.handlers.user.AddHandler.class, POST));
-        pathToMethod.putIfAbsent("/route/add", new ClassMethodCreator(com.ivan.servlet.rest.handlers.route.AddHandler.class, POST));
+        pathToMethod.put("/user/get", new ClassMethodCreator(com.ivan.servlet.handlers.user.GetHandler.class, GET));
+        pathToMethod.put("/user/add", new ClassMethodCreator(com.ivan.servlet.handlers.user.AddHandler.class, POST));
+        pathToMethod.put("/route/add", new ClassMethodCreator(com.ivan.servlet.handlers.route.AddHandler.class, POST));
+        pathToMethod.put("/coordinate/add", new ClassMethodCreator(com.ivan.servlet.handlers.coordinate.AddHandler.class, POST));
     }
 
     @SuppressWarnings("unchecked")

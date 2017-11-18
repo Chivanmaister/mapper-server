@@ -5,7 +5,6 @@ import com.ivan.servlet.exceptions.RouteRepositoryException;
 import com.ivan.servlet.exceptions.ServiceException;
 import com.ivan.servlet.repositories.RouteDao;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
-
 import java.sql.*;
 
 public class BaseRouteDao implements RouteDao {
@@ -17,18 +16,26 @@ public class BaseRouteDao implements RouteDao {
         this.dataSource = dataSource;
     }
 
-    public void addRoute(Integer userId, String name) throws ServiceException {
+    public Route addRoute(Integer userId, String name) throws ServiceException {
         String queryString = "INSERT INTO `Route`(`date`, `user_id`, `name`) VALUES (?, ?, ?);";
+        Route route = null;
         Connection connection = null;
         PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
 
         try {
             connection = dataSource.getConnection();
-            preparedStatement = connection.prepareStatement(queryString);
+            preparedStatement = connection.prepareStatement(queryString, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setTimestamp(1, new Timestamp(System.currentTimeMillis()));
             preparedStatement.setInt(2, userId);
             preparedStatement.setString(3, name);
             preparedStatement.executeUpdate();
+            resultSet = preparedStatement.getGeneratedKeys();
+
+            if (resultSet.next()) {
+                route = new Route();
+                route.setId(resultSet.getInt(1));
+            }
         } catch (SQLException e) {
             throw new RouteRepositoryException("Error adding route");
         } finally {
@@ -39,7 +46,53 @@ public class BaseRouteDao implements RouteDao {
                 if (preparedStatement != null) {
                     preparedStatement.close();
                 }
+                if (resultSet != null) {
+                    resultSet.close();
+                }
             } catch (SQLException e) {}
         }
+
+        return route;
+    }
+
+    public Route getRoute(Integer id) throws ServiceException {
+        String queryString = "SELECT " +
+                ROUTE_QUERY +
+                "   FROM `Route` " +
+                "   WHERE `Route`.`id` = ?;";
+        Route route = null;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        try {
+            connection = dataSource.getConnection();
+            preparedStatement = connection.prepareStatement(queryString);
+            preparedStatement.setInt(1, id);
+            resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                route = new Route();
+                route.setId(resultSet.getInt(1));
+                route.setDate(resultSet.getTimestamp(2));
+                route.setUserId(resultSet.getInt(3));
+                route.setName(resultSet.getString(4));
+            }
+        } catch (SQLException e) {
+            throw new RouteRepositoryException("Error getting route");
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+            } catch (SQLException ignored) {}
+        }
+        return route;
     }
 }

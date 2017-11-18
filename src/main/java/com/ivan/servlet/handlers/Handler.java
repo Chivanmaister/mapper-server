@@ -1,4 +1,4 @@
-package com.ivan.servlet.rest.handlers;
+package com.ivan.servlet.handlers;
 
 import com.ivan.servlet.exceptions.ServiceException;
 

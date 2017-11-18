@@ -1,11 +1,10 @@
-package com.ivan.servlet.rest.handlers.route;
-
+package com.ivan.servlet.handlers.route;
 
 import com.ivan.servlet.entities.Route;
 import com.ivan.servlet.exceptions.InvalidNameException;
 import com.ivan.servlet.exceptions.ServiceException;
 import com.ivan.servlet.json.JsonUtils;
-import com.ivan.servlet.rest.handlers.Handler;
+import com.ivan.servlet.handlers.Handler;
 import com.ivan.servlet.services.RestService;
 import com.ivan.servlet.services.RouteService;
 import com.ivan.servlet.services.UserService;

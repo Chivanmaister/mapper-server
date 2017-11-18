@@ -1,7 +1,7 @@
 package com.ivan.servlet.rest;
 
 import com.ivan.servlet.exceptions.ServiceException;
-import com.ivan.servlet.rest.handlers.Handler;
+import com.ivan.servlet.handlers.Handler;
 import com.ivan.servlet.rest.helper.HandlerFactory;
 
 import javax.servlet.http.HttpServlet;

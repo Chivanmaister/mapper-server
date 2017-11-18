@@ -16,9 +16,19 @@ public class JsonUtils {
 
         jsonGenerator.writeStartObject();
         if (user != null) {
-          jsonGenerator.writeNumberField("id", user.getId());
+            if (user.getId() != null) {
+                jsonGenerator.writeNumberField("id", user.getId());
+            } else {
+                jsonGenerator.writeNullField("id");
+            }
+            if (user.getEmail() != null) {
+                jsonGenerator.writeStringField("email", user.getEmail());
+            } else {
+                jsonGenerator.writeNullField("email");
+            }
         } else {
           jsonGenerator.writeNullField("id");
+          jsonGenerator.writeNullField("email");
         }
         jsonGenerator.writeEndObject();
         jsonGenerator.close();
@@ -35,8 +45,28 @@ public class JsonUtils {
             } else {
                 jsonGenerator.writeNullField("id");
             }
+            if (route.getDate() != null) {
+                jsonGenerator.writeNumberField("date", route.getDate().getTime());
+            } else {
+                jsonGenerator.writeNullField("date");
+            }
+            if (route.getName() != null) {
+                jsonGenerator.writeStringField("name", route.getName());
+            } else {
+                jsonGenerator.writeNullField("name");
+            }
+            if (route.getUserId() != null) {
+                jsonGenerator.writeNumberField("userId", route.getUserId());
+            } else {
+                jsonGenerator.writeNullField("userId");
+            }
         } else {
             jsonGenerator.writeNullField("id");
+            jsonGenerator.writeNullField("date");
+            jsonGenerator.writeNullField("name");
+            jsonGenerator.writeNullField("userId");
         }
+        jsonGenerator.writeEndObject();
+        jsonGenerator.close();
     }
 }
