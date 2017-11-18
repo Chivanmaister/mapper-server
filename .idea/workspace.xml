@@ -6,35 +6,40 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a291d99-451c-4a32-adb0-50876cfe8d67" name="Default" comment="Updated handlers:&#10;  route/AddHandler&#10;  user/AddHandler, user/GetHandler&#10;Created handlers:&#10;  coordinate/AddHandler&#10;  route/UpdateHandler&#10;Updated services:">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/exceptions/CoordinateRepositoryException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/exceptions/InvalidCoordinateRangeException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/exceptions/NullCoordinateException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/exceptions/NullRouteIdException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/handlers/coordinate/AddHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/handlers/route/UpdateHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/services/CoordinateService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/services/impl/DefaultCoordinateService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/rest/handlers/Handler.java" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/handlers/Handler.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/rest/handlers/route/AddHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/handlers/route/AddHandler.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/rest/handlers/user/AddHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/handlers/user/AddHandler.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/rest/handlers/user/GetHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/handlers/user/GetHandler.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/com/ivan/servlet/rest/handlers/TestTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/ivan/servlet/handlers/TestTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="9a291d99-451c-4a32-adb0-50876cfe8d67" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/ivan/servlet/rest/handlers/Handler.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/ivan/servlet/rest/handlers/route/AddHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/ivan/servlet/rest/handlers/user/AddHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/ivan/servlet/rest/handlers/user/GetHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/com/ivan/servlet/rest/handlers/TestTest.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/json/JsonUtils.class" afterPath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/json/JsonUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/repositories/CoordinateDao.class" afterPath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/repositories/CoordinateDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/repositories/Repository.class" afterPath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/repositories/Repository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/repositories/RouteDao.class" afterPath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/repositories/RouteDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/repositories/UserDao.class" afterPath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/repositories/UserDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/repositories/impl/BaseRouteDao.class" afterPath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/repositories/impl/BaseRouteDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/repositories/impl/BaseUserDao.class" afterPath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/repositories/impl/BaseUserDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/rest/RestServlet.class" afterPath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/rest/RestServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/rest/helper/HandlerFactory.class" afterPath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/rest/helper/HandlerFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/services/RestService.class" afterPath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/services/RestService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/services/RouteService.class" afterPath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/services/RouteService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/services/UserService.class" afterPath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/services/UserService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/services/impl/DefaultRouteService.class" afterPath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/services/impl/DefaultRouteService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/services/impl/DefaultUserService.class" afterPath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/WEB-INF/classes/com/ivan/servlet/services/impl/DefaultUserService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ivan/servlet/json/JsonUtils.class" afterPath="$PROJECT_DIR$/target/classes/com/ivan/servlet/json/JsonUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ivan/servlet/repositories/CoordinateDao.class" afterPath="$PROJECT_DIR$/target/classes/com/ivan/servlet/repositories/CoordinateDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ivan/servlet/repositories/Repository.class" afterPath="$PROJECT_DIR$/target/classes/com/ivan/servlet/repositories/Repository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ivan/servlet/repositories/RouteDao.class" afterPath="$PROJECT_DIR$/target/classes/com/ivan/servlet/repositories/RouteDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ivan/servlet/repositories/impl/BaseRouteDao.class" afterPath="$PROJECT_DIR$/target/classes/com/ivan/servlet/repositories/impl/BaseRouteDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ivan/servlet/repositories/impl/BaseUserDao.class" afterPath="$PROJECT_DIR$/target/classes/com/ivan/servlet/repositories/impl/BaseUserDao.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ivan/servlet/rest/RestServlet.class" afterPath="$PROJECT_DIR$/target/classes/com/ivan/servlet/rest/RestServlet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ivan/servlet/rest/helper/HandlerFactory.class" afterPath="$PROJECT_DIR$/target/classes/com/ivan/servlet/rest/helper/HandlerFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ivan/servlet/services/RestService.class" afterPath="$PROJECT_DIR$/target/classes/com/ivan/servlet/services/RestService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ivan/servlet/services/RouteService.class" afterPath="$PROJECT_DIR$/target/classes/com/ivan/servlet/services/RouteService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/ivan/servlet/services/impl/DefaultRouteService.class" afterPath="$PROJECT_DIR$/target/classes/com/ivan/servlet/services/impl/DefaultRouteService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/json/JsonUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/json/JsonUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/repositories/CoordinateDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/repositories/CoordinateDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/repositories/Repository.java" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/repositories/Repository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/repositories/RouteDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/repositories/RouteDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/repositories/impl/BaseCoordinateDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/repositories/impl/BaseCoordinateDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/repositories/impl/BaseRouteDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/repositories/impl/BaseRouteDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/repositories/impl/BaseUserDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/repositories/impl/BaseUserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/rest/RestServlet.java" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/rest/RestServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/rest/helper/HandlerFactory.java" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/rest/helper/HandlerFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/services/RestService.java" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/services/RestService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/services/RouteService.java" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/services/RouteService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/services/impl/DefaultRouteService.java" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/services/impl/DefaultRouteService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/index.jsp" afterPath="$PROJECT_DIR$/target/TMapperTestServlet-1.0-SNAPSHOT/index.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -62,16 +67,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Handler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ivan/servlet/handlers/Handler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AddHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ivan/servlet/handlers/route/AddHandler.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -342,11 +337,6 @@
             <path>
               <item name="TMapperTestServlet" type="b2602c69:ProjectViewProjectNode" />
               <item name="TMapperTestServlet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TMapperTestServlet" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TMapperTestServlet" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TMapperTestServlet" type="b2602c69:ProjectViewProjectNode" />
@@ -907,12 +897,20 @@
       <workItem from="1509825826770" duration="24484000" />
       <workItem from="1509990947723" duration="28935000" />
       <workItem from="1510772817304" duration="12378000" />
-      <workItem from="1510931338153" duration="25391000" />
+      <workItem from="1510931338153" duration="26356000" />
     </task>
+    <task id="LOCAL-00001" summary="New exceptions&#10;Updated handlers:&#10;  route/AddHandler&#10;  user/AddHandler, user/GetHandler&#10;Created handlers:&#10;  coordinate/AddHandler&#10;  route/UpdateHandler&#10;Updated services:&#10;  RestService&#10;  RouteService&#10;  DefaultRouteService&#10;Created services:&#10;  CoordinateService&#10;  DefaultCoordinateService&#10;Updated repositories:&#10;  BaseCoordinateDao&#10;  BaseRouteDao&#10;  BaseUserDao&#10;  CoordinateDao&#10;  Repository&#10;  RouteDao&#10;Base updates: &#10;  RestServlet&#10;  JsonUtils">
+      <created>1511043462270</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1511043462270</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91188000" />
+    <option name="totallyTimeSpent" value="92153000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -928,7 +926,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26413044" sideWeight="0.4978678" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26413044" sideWeight="0.4978678" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32826087" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -936,7 +934,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39456522" sideWeight="0.4968017" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20095949" sideWeight="0.4963119" order="5" side_tool="false" content_ui="combo" />
@@ -983,6 +981,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="New exceptions&#10;Updated handlers:&#10;  route/AddHandler&#10;  user/AddHandler, user/GetHandler&#10;Created handlers:&#10;  coordinate/AddHandler&#10;  route/UpdateHandler&#10;Updated services:&#10;  RestService&#10;  RouteService&#10;  DefaultRouteService&#10;Created services:&#10;  CoordinateService&#10;  DefaultCoordinateService&#10;Updated repositories:&#10;  BaseCoordinateDao&#10;  BaseRouteDao&#10;  BaseUserDao&#10;  CoordinateDao&#10;  Repository&#10;  RouteDao&#10;Base updates: &#10;  RestServlet&#10;  JsonUtils" />
+    <option name="LAST_COMMIT_MESSAGE" value="New exceptions&#10;Updated handlers:&#10;  route/AddHandler&#10;  user/AddHandler, user/GetHandler&#10;Created handlers:&#10;  coordinate/AddHandler&#10;  route/UpdateHandler&#10;Updated services:&#10;  RestService&#10;  RouteService&#10;  DefaultRouteService&#10;Created services:&#10;  CoordinateService&#10;  DefaultCoordinateService&#10;Updated repositories:&#10;  BaseCoordinateDao&#10;  BaseRouteDao&#10;  BaseUserDao&#10;  CoordinateDao&#10;  Repository&#10;  RouteDao&#10;Base updates: &#10;  RestServlet&#10;  JsonUtils" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1302,14 +1304,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1442,6 +1436,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
