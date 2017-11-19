@@ -20,6 +20,7 @@ public class HandlerFactory {
         pathToMethod.put("/user/get", new ClassMethodCreator(com.ivan.servlet.handlers.user.GetHandler.class, GET));
         pathToMethod.put("/user/add", new ClassMethodCreator(com.ivan.servlet.handlers.user.AddHandler.class, POST));
         pathToMethod.put("/route/add", new ClassMethodCreator(com.ivan.servlet.handlers.route.AddHandler.class, POST));
+        pathToMethod.put("/route/update", new ClassMethodCreator(com.ivan.servlet.handlers.route.UpdateHandler.class, POST));
         pathToMethod.put("/coordinate/add", new ClassMethodCreator(com.ivan.servlet.handlers.coordinate.AddHandler.class, POST));
     }
 

@@ -55,6 +55,36 @@ public class BaseRouteDao implements RouteDao {
         return route;
     }
 
+    @Override
+    public void updateRoute(Integer id, String name) throws ServiceException{
+        String queryString = "UPDATE `Route` " +
+                "   SET `Route`.`name` = ? " +
+                "   WHERE `Route`.`id` = ? " +
+                ";";
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        try {
+            connection = dataSource.getConnection();
+            preparedStatement = connection.prepareStatement(queryString);
+            preparedStatement.setString(1, name);
+            preparedStatement.setInt(2, id);
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RouteRepositoryException("Error updating route");
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+            } catch (SQLException ignored) {}
+        }
+    }
+
     public Route getRoute(Integer id) throws ServiceException {
         String queryString = "SELECT " +
                 ROUTE_QUERY +

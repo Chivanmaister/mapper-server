@@ -2,6 +2,7 @@ package com.ivan.servlet.services.impl;
 
 import com.ivan.servlet.entities.Route;
 import com.ivan.servlet.exceptions.NullRouteIdException;
+import com.ivan.servlet.exceptions.RouteRepositoryException;
 import com.ivan.servlet.exceptions.ServiceException;
 import com.ivan.servlet.repositories.CoordinateDao;
 import com.ivan.servlet.repositories.Repository;
@@ -25,11 +26,16 @@ public class DefaultRouteService implements RouteService {
     }
 
     @Override
-    public void validateRoute(Integer routeId) throws ServiceException {
+    public void validateRouteExists(Integer routeId) throws ServiceException {
         if (routeId == null) {
             throw new NullRouteIdException("Route identifier is null");
         }
         repository.getRepository(RouteDao.class);
+    }
+
+    @Override
+    public void updateRouteName(Integer id, String name) throws ServiceException {
+        repository.getRepository(RouteDao.class).updateRoute(id, name);
     }
 
 }

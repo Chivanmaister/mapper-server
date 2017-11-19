@@ -7,5 +7,7 @@ public interface RouteService {
 
     Route addRoute(String name, Integer userId) throws ServiceException;
 
-    void validateRoute(Integer routeId) throws ServiceException;
+    void validateRouteExists(Integer routeId) throws ServiceException;
+
+    void updateRouteName(Integer id, String name) throws ServiceException;
 }

@@ -8,4 +8,6 @@ public interface RouteDao {
     Route getRoute(Integer id) throws ServiceException;
 
     Route addRoute(Integer userId, String name) throws ServiceException;
+
+    void updateRoute(Integer id, String name) throws ServiceException;
 }

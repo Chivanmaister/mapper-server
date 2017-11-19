@@ -43,7 +43,7 @@ public class AddHandler implements Handler {
 
     private Integer getRouteId(HttpServletRequest request) throws ServiceException {
         Integer routeId = Integer.valueOf(request.getParameter("routeId"));
-        routeService.validateRoute(routeId);
+        routeService.validateRouteExists(routeId);
         return routeId;
     }
 }
