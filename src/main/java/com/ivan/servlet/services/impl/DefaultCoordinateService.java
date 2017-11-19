@@ -23,11 +23,11 @@ public class DefaultCoordinateService implements CoordinateService {
         repository.getRepository(CoordinateDao.class).addCoordinate(latitude, longitude, routeId);
     }
 
-    public void validateLatitude(Double coordinate) throws ServiceException {
-        if (coordinate == null) {
+    public void validateLatitude(Double latitude) throws ServiceException {
+        if (latitude == null) {
             throw new NullCoordinateException("Invalid latitude");
         }
-        if (coordinate > 85D || coordinate < -85D) {
+        if (latitude > 85D || latitude < -85D) {
             throw new InvalidCoordinateRangeException("Invalid latitude range");
         }
     }

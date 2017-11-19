@@ -54,7 +54,7 @@ public class DefaultUserService implements UserService {
         User user;
         try {
             user = repository.getRepository(UserDao.class).getUser(userId);
-            if (user.getEmail() == null) {
+            if (user == null) {
                 throw new InvalidUserException("User with id [" + userId + "] doesn't exists");
             }
         } catch (ServiceException e) {

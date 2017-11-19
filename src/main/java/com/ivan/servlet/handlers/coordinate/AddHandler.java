@@ -37,7 +37,7 @@ public class AddHandler implements Handler {
 
     private Double getLongitude(HttpServletRequest request) throws ServiceException {
         Double longitude = Double.valueOf(request.getParameter("longitude"));
-        coordinateService.validateLatitude(longitude);
+        coordinateService.validateLongitude(longitude);
         return longitude;
     }
 
