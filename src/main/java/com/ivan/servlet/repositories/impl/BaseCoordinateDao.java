@@ -12,7 +12,7 @@ import java.sql.SQLException;
 public class BaseCoordinateDao implements CoordinateDao {
 
     private MysqlDataSource dataSource;
-    private static final String COORDINATE_QUERY = " `Coordinates`.`latitude` as latitude, `Coordinates`.`longitude` as longitude, `Coordinates`.`route_id` as routeId ";
+    private static final String COORDINATE_QUERY = " `Coordinate`.`id` as id, `Coordinates`.`latitude` as latitude, `Coordinates`.`longitude` as longitude, `Coordinates`.`route_id` as routeId ";
 
     public BaseCoordinateDao(MysqlDataSource dataSource) {
         this.dataSource = dataSource;

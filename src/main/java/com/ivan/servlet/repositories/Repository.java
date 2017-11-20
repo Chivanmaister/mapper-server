@@ -3,6 +3,7 @@ package com.ivan.servlet.repositories;
 import com.ivan.servlet.exceptions.InvalidClassException;
 import com.ivan.servlet.exceptions.ServiceException;
 import com.ivan.servlet.repositories.impl.BaseCoordinateDao;
+import com.ivan.servlet.repositories.impl.BaseHistoryDao;
 import com.ivan.servlet.repositories.impl.BaseRouteDao;
 import com.ivan.servlet.repositories.impl.BaseUserDao;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
@@ -19,6 +20,7 @@ public class Repository {
         repositoryMap.put(UserDao.class, new BaseUserDao(dataSource));
         repositoryMap.put(RouteDao.class, new BaseRouteDao(dataSource));
         repositoryMap.put(CoordinateDao.class, new BaseCoordinateDao(dataSource));
+        repositoryMap.put(HistoryDao.class, new BaseHistoryDao(dataSource));
     }
 
     private void setDataSource() {
