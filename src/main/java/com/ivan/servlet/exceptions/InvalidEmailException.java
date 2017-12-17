@@ -3,10 +3,10 @@ package com.ivan.servlet.exceptions;
 public class InvalidEmailException extends ServiceException {
 
     public InvalidEmailException(String message) {
-        super(message);
+        super(ErrorCodes.INVALID_EMAIL, message);
     }
 
     public InvalidEmailException() {
-        super("Invalid email");
+        super(ErrorCodes.INVALID_EMAIL, "Invalid email");
     }
 }

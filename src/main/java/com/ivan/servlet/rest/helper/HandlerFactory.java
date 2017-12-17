@@ -1,18 +1,20 @@
 package com.ivan.servlet.rest.helper;
 
+import com.ivan.servlet.exceptions.ErrorCodes;
 import com.ivan.servlet.exceptions.InvalidMethodException;
-import com.ivan.servlet.exceptions.InvalidServiceExcepton;
+import com.ivan.servlet.exceptions.InvalidServiceException;
 import com.ivan.servlet.exceptions.ServiceException;
+import com.ivan.servlet.handlers.ErrorHandler;
 import com.ivan.servlet.handlers.Handler;
 import com.ivan.servlet.services.RestService;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
+import java.util.HashMap;
+import java.util.Map;
 
 public class HandlerFactory {
-    private static final ConcurrentMap<String, ClassMethodCreator> pathToMethod = new ConcurrentHashMap<>();
+    private static final Map<String, ClassMethodCreator> pathToMethod = new HashMap<>();
     private static final String GET = "GET";
     private static final String POST = "POST";
 
@@ -22,22 +24,36 @@ public class HandlerFactory {
         pathToMethod.put("/route/add", new ClassMethodCreator(com.ivan.servlet.handlers.route.AddHandler.class, POST));
         pathToMethod.put("/route/update", new ClassMethodCreator(com.ivan.servlet.handlers.route.UpdateHandler.class, POST));
         pathToMethod.put("/coordinate/add", new ClassMethodCreator(com.ivan.servlet.handlers.coordinate.AddHandler.class, POST));
+        pathToMethod.put("/history/get", new ClassMethodCreator(com.ivan.servlet.handlers.history.GetHandler.class, GET));
     }
 
     @SuppressWarnings("unchecked")
-    public Object getDispatcher(String namespace, String method) throws ServiceException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+    public Object getDispatcher(String namespace, String method) throws ServiceException {
         ClassMethodCreator creator = pathToMethod.get(namespace);
         if (creator == null) {
-            throw new InvalidServiceExcepton("");
+            throw new InvalidServiceException("Unknown service");
         }
         if (!method.equalsIgnoreCase(creator.getMethod())) {
-            throw new InvalidMethodException();
+            throw new InvalidMethodException("Unknown class to instantiate");
         }
         Class foundClass = creator.getHandlerClass();
-        Constructor constructor = foundClass.getConstructor(RestService.class);
+        Constructor constructor;
+        Handler handler;
+        try {
+            constructor = foundClass.getConstructor(RestService.class);
+        } catch (NoSuchMethodException e) {
+            throw new ServiceException(ErrorCodes.INTERNAL_ERROR, "Unknown method");
+        }
         RestService restService = new RestService();
-        Handler object = (Handler) constructor.newInstance(restService);
-
-        return object;
+        try {
+            handler = (Handler) constructor.newInstance(restService);
+        } catch (IllegalAccessException e) {
+            throw new ServiceException(ErrorCodes.INTERNAL_ERROR, "Illegal access");
+        } catch (InstantiationException e) {
+            throw new ServiceException(ErrorCodes.INTERNAL_ERROR, "Error instantiating");
+        } catch (InvocationTargetException e) {
+            throw new ServiceException(ErrorCodes.INTERNAL_ERROR, "Error in invocation target");
+        }
+        return handler;
     }
 }

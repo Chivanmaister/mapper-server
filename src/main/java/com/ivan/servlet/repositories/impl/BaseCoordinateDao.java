@@ -1,6 +1,6 @@
 package com.ivan.servlet.repositories.impl;
 
-import com.ivan.servlet.exceptions.CoordinateRepositoryException;
+import com.ivan.servlet.exceptions.DaoException;
 import com.ivan.servlet.exceptions.ServiceException;
 import com.ivan.servlet.repositories.CoordinateDao;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
@@ -31,7 +31,7 @@ public class BaseCoordinateDao implements CoordinateDao {
             preparedStatement.setInt(3, routeId);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            throw new CoordinateRepositoryException("Error inserting coordinate into database");
+            throw new DaoException("Error inserting coordinate into database");
         } finally {
             try {
                 if (connection != null) {

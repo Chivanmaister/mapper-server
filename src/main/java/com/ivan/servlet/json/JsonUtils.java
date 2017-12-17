@@ -69,4 +69,23 @@ public class JsonUtils {
         jsonGenerator.writeEndObject();
         jsonGenerator.close();
     }
+
+    public static void createErrorJson(HttpServletResponse response, int errorCode, String message) throws IOException {
+        JsonFactory factory = new JsonFactory();
+        JsonGenerator jsonGenerator = factory.createGenerator(response.getWriter());
+
+        jsonGenerator.writeStartObject();
+        if (errorCode != 0) {
+            jsonGenerator.writeNumberField("code", errorCode);
+        } else {
+            jsonGenerator.writeNullField("code");
+        }
+        if (message != null) {
+            jsonGenerator.writeStringField("message", message);
+        } else {
+            jsonGenerator.writeNullField("message");
+        }
+        jsonGenerator.writeEndObject();
+        jsonGenerator.close();
+    }
 }

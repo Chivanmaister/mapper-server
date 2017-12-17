@@ -1,8 +1,8 @@
 package com.ivan.servlet.repositories.impl;
 
 import com.ivan.servlet.entities.User;
+import com.ivan.servlet.exceptions.DaoException;
 import com.ivan.servlet.exceptions.ServiceException;
-import com.ivan.servlet.exceptions.UserRepositoryException;
 import com.ivan.servlet.repositories.UserDao;
 
 import javax.sql.DataSource;
@@ -41,7 +41,7 @@ public class BaseUserDao implements UserDao {
                 user.setEmail(resultSet.getString(2));
             }
         } catch (SQLException e) {
-            throw new UserRepositoryException("Error getting user from database");
+            throw new DaoException("Error getting user from database");
         } finally {
             try {
                 if (resultSet != null) {
@@ -83,7 +83,7 @@ public class BaseUserDao implements UserDao {
                 user.setEmail(resultSet.getString(2));
             }
         } catch (SQLException e) {
-            throw new UserRepositoryException("Error getting user from database");
+            throw new DaoException("Error getting user from database");
         } finally {
             try {
                 if (resultSet != null) {
@@ -122,7 +122,7 @@ public class BaseUserDao implements UserDao {
                 user.setId(resultSet.getInt(1));
             }
         } catch (SQLException e) {
-            throw new UserRepositoryException("Error adding user to database");
+            throw new DaoException("Error adding user to database");
         } finally {
             try {
                 if (connection != null) {

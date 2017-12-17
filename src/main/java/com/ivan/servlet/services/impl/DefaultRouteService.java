@@ -1,10 +1,8 @@
 package com.ivan.servlet.services.impl;
 
 import com.ivan.servlet.entities.Route;
-import com.ivan.servlet.exceptions.NullRouteIdException;
-import com.ivan.servlet.exceptions.RouteRepositoryException;
+import com.ivan.servlet.exceptions.InvalidRouteIdException;
 import com.ivan.servlet.exceptions.ServiceException;
-import com.ivan.servlet.repositories.CoordinateDao;
 import com.ivan.servlet.repositories.Repository;
 import com.ivan.servlet.repositories.RouteDao;
 import com.ivan.servlet.services.RestService;
@@ -28,7 +26,7 @@ public class DefaultRouteService implements RouteService {
     @Override
     public void validateRouteExists(Integer routeId) throws ServiceException {
         if (routeId == null) {
-            throw new NullRouteIdException("Route identifier is null");
+            throw new InvalidRouteIdException("Invalid route identifier");
         }
         repository.getRepository(RouteDao.class);
     }

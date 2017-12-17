@@ -34,7 +34,7 @@ public class Repository {
     @SuppressWarnings("unchecked")
     public <T> T getRepository(Class<T> repositoryClass) throws ServiceException {
         if (!repositoryMap.containsKey(repositoryClass)) {
-            throw new InvalidClassException("Unknown repository");
+            throw new InvalidClassException("Error getting repository");
         }
         return (T) repositoryMap.get(repositoryClass);
     }

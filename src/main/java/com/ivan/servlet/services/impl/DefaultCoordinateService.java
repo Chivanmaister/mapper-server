@@ -1,13 +1,12 @@
 package com.ivan.servlet.services.impl;
 
 import com.ivan.servlet.exceptions.InvalidCoordinateRangeException;
-import com.ivan.servlet.exceptions.NullCoordinateException;
+import com.ivan.servlet.exceptions.InvalidCoordinateException;
 import com.ivan.servlet.exceptions.ServiceException;
 import com.ivan.servlet.repositories.CoordinateDao;
 import com.ivan.servlet.repositories.Repository;
 import com.ivan.servlet.services.CoordinateService;
 import com.ivan.servlet.services.RestService;
-import com.ivan.servlet.services.RouteService;
 
 public class DefaultCoordinateService implements CoordinateService {
 
@@ -25,7 +24,7 @@ public class DefaultCoordinateService implements CoordinateService {
 
     public void validateLatitude(Double latitude) throws ServiceException {
         if (latitude == null) {
-            throw new NullCoordinateException("Invalid latitude");
+            throw new InvalidCoordinateException("Invalid latitude");
         }
         if (latitude > 85D || latitude < -85D) {
             throw new InvalidCoordinateRangeException("Invalid latitude range");
@@ -35,7 +34,7 @@ public class DefaultCoordinateService implements CoordinateService {
     @Override
     public void validateLongitude(Double longitude) throws ServiceException {
         if (longitude == null) {
-            throw new NullCoordinateException("Invalid longitude");
+            throw new InvalidCoordinateException("Invalid longitude");
         }
         if (longitude > 180D || longitude < -180D) {
             throw new InvalidCoordinateRangeException("Invalid longitude range");

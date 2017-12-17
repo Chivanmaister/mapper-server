@@ -1,10 +1,11 @@
 package com.ivan.servlet.repositories.impl;
 
 import com.ivan.servlet.entities.Route;
-import com.ivan.servlet.exceptions.RouteRepositoryException;
+import com.ivan.servlet.exceptions.DaoException;
 import com.ivan.servlet.exceptions.ServiceException;
 import com.ivan.servlet.repositories.RouteDao;
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
+
 import java.sql.*;
 
 public class BaseRouteDao implements RouteDao {
@@ -37,7 +38,7 @@ public class BaseRouteDao implements RouteDao {
                 route.setId(resultSet.getInt(1));
             }
         } catch (SQLException e) {
-            throw new RouteRepositoryException("Error adding route");
+            throw new DaoException("Error adding route");
         } finally {
             try {
                 if (connection != null) {
@@ -49,14 +50,15 @@ public class BaseRouteDao implements RouteDao {
                 if (resultSet != null) {
                     resultSet.close();
                 }
-            } catch (SQLException e) {}
+            } catch (SQLException e) {
+            }
         }
 
         return route;
     }
 
     @Override
-    public void updateRoute(Integer id, String name) throws ServiceException{
+    public void updateRoute(Integer id, String name) throws ServiceException {
         String queryString = "UPDATE `Route` " +
                 "   SET `Route`.`name` = ? " +
                 "   WHERE `Route`.`id` = ? " +
@@ -72,7 +74,7 @@ public class BaseRouteDao implements RouteDao {
             preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
-            throw new RouteRepositoryException("Error updating route");
+            throw new DaoException("Error updating route");
         } finally {
             try {
                 if (connection != null) {
@@ -81,7 +83,8 @@ public class BaseRouteDao implements RouteDao {
                 if (preparedStatement != null) {
                     preparedStatement.close();
                 }
-            } catch (SQLException ignored) {}
+            } catch (SQLException ignored) {
+            }
         }
     }
 
@@ -109,7 +112,7 @@ public class BaseRouteDao implements RouteDao {
                 route.setName(resultSet.getString(4));
             }
         } catch (SQLException e) {
-            throw new RouteRepositoryException("Error getting route");
+            throw new DaoException("Error getting route");
         } finally {
             try {
                 if (connection != null) {
@@ -121,7 +124,8 @@ public class BaseRouteDao implements RouteDao {
                 if (resultSet != null) {
                     resultSet.close();
                 }
-            } catch (SQLException ignored) {}
+            } catch (SQLException ignored) {
+        }
         }
         return route;
     }
