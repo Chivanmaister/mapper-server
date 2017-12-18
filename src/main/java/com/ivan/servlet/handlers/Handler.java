@@ -8,5 +8,5 @@ import java.io.IOException;
 
 public interface Handler {
 
-    void handle(HttpServletRequest request, HttpServletResponse response) throws IOException, ClassNotFoundException, ServiceException;
+  void handle(HttpServletRequest request, HttpServletResponse response) throws IOException, ServiceException;
 }

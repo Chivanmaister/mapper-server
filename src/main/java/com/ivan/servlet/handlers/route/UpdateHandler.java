@@ -20,7 +20,7 @@ public class UpdateHandler implements Handler {
     }
 
     @Override
-    public void handle(HttpServletRequest request, HttpServletResponse response) throws IOException, ClassNotFoundException, ServiceException {
+    public void handle(HttpServletRequest request, HttpServletResponse response) throws IOException, ServiceException {
         Integer id = getId(request);
         String name = getName(request);
         routeService.updateRouteName(id, name);

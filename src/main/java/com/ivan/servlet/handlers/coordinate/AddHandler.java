@@ -12,38 +12,38 @@ import java.io.IOException;
 
 public class AddHandler implements Handler {
 
-    private CoordinateService coordinateService;
-    private RouteService routeService;
+  private CoordinateService coordinateService;
+  private RouteService routeService;
 
-    public AddHandler(RestService restService) throws ServiceException {
-        coordinateService = restService.getService(CoordinateService.class);
-        routeService = restService.getService(RouteService.class);
-    }
+  public AddHandler(RestService restService) throws ServiceException {
+    coordinateService = restService.getService(CoordinateService.class);
+    routeService = restService.getService(RouteService.class);
+  }
 
-    @Override
-    public void handle(HttpServletRequest request, HttpServletResponse response) throws IOException, ServiceException {
-        Double latitude = getLatitude(request);
-        Double longitude = getLongitude(request);
-        Integer routeId = getRouteId(request);
+  @Override
+  public void handle(HttpServletRequest request, HttpServletResponse response) throws IOException, ServiceException {
+    Double latitude = getLatitude(request);
+    Double longitude = getLongitude(request);
+    Integer routeId = getRouteId(request);
 
-        coordinateService.addCoordinate(latitude, longitude, routeId);
-    }
+    coordinateService.addCoordinate(latitude, longitude, routeId);
+  }
 
-    private Double getLatitude(HttpServletRequest request) throws ServiceException {
-        Double latitude = Double.valueOf(request.getParameter("latitude"));
-        coordinateService.validateLatitude(latitude);
-        return latitude;
-    }
+  private Double getLatitude(HttpServletRequest request) throws ServiceException {
+    Double latitude = Double.valueOf(request.getParameter("latitude"));
+    coordinateService.validateLatitude(latitude);
+    return latitude;
+  }
 
-    private Double getLongitude(HttpServletRequest request) throws ServiceException {
-        Double longitude = Double.valueOf(request.getParameter("longitude"));
-        coordinateService.validateLongitude(longitude);
-        return longitude;
-    }
+  private Double getLongitude(HttpServletRequest request) throws ServiceException {
+    Double longitude = Double.valueOf(request.getParameter("longitude"));
+    coordinateService.validateLongitude(longitude);
+    return longitude;
+  }
 
-    private Integer getRouteId(HttpServletRequest request) throws ServiceException {
-        Integer routeId = Integer.valueOf(request.getParameter("routeId"));
-        routeService.validateRouteExists(routeId);
-        return routeId;
-    }
+  private Integer getRouteId(HttpServletRequest request) throws ServiceException {
+    Integer routeId = Integer.valueOf(request.getParameter("routeId"));
+    routeService.validateRouteExists(routeId);
+    return routeId;
+  }
 }

@@ -8,10 +8,10 @@ import java.io.IOException;
 
 public class ErrorHandler {
 
-    public void handle(Exception e, HttpServletResponse response) throws IOException {
+  public void handle(Exception e, HttpServletResponse response) throws IOException {
 
-        int errorCode = ((ServiceException) e).getErrorCode();
-        String message = e.getMessage();
-        JsonUtils.createErrorJson(response, errorCode, message);
-    }
+    int errorCode = ((ServiceException) e).getErrorCode();
+    String message = e.getMessage();
+    JsonUtils.createErrorJson(response, errorCode, message);
+  }
 }

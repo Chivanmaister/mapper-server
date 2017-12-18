@@ -6,11 +6,11 @@ import com.ivan.servlet.exceptions.ServiceException;
 
 public interface UserService {
 
-    void validateEmail(String email) throws ServiceException;
+  void validateEmail(String email) throws ServiceException;
 
-    User getUser(String email) throws ServiceException;
+  User getUser(String email) throws ServiceException;
 
-    User addUser(String email) throws ServiceException;
+  User addUser(String email) throws ServiceException;
 
-    void validateUserExists(Integer userId) throws ServiceException;
+  void validateUserExists(Integer userId) throws ServiceException;
 }

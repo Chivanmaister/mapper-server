@@ -4,20 +4,12 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
     <servlet>
-        <servlet-name>mapper-servlet</servlet-name>
+        <servlet-name>mapper-app-servlet</servlet-name>
         <servlet-class>com.ivan.servlet.rest.RestServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>user-get</servlet-name>
-        <servlet-class>com.ivan.servlet.rest.UserServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>mapper-servlet</servlet-name>
-        <url-pattern>/mapper-server</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>user-get</servlet-name>
-        <url-pattern>/user-server</url-pattern>
+        <servlet-name>mapper-app-servlet</servlet-name>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -24,7 +24,7 @@ public class AddHandler implements Handler {
     }
 
     @Override
-    public void handle(HttpServletRequest request, HttpServletResponse response) throws IOException, ClassNotFoundException, ServiceException {
+    public void handle(HttpServletRequest request, HttpServletResponse response) throws IOException, ServiceException {
         Integer userId = getUserId(request);
         String name = getName(request);
         Route route = routeService.addRoute(name, userId);
