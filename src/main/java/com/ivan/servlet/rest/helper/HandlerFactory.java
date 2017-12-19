@@ -18,6 +18,7 @@ public class HandlerFactory {
   private static final String POST = "POST";
 
   public HandlerFactory() {
+    pathToMethod.put("/ping", new ClassMethodCreator(com.ivan.servlet.handlers.PingHandler.class, GET));
     pathToMethod.put("/user/get", new ClassMethodCreator(com.ivan.servlet.handlers.user.GetHandler.class, GET));
     pathToMethod.put("/user/add", new ClassMethodCreator(com.ivan.servlet.handlers.user.AddHandler.class, POST));
     pathToMethod.put("/route/add", new ClassMethodCreator(com.ivan.servlet.handlers.route.AddHandler.class, POST));

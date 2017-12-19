@@ -158,4 +158,18 @@ public class JsonUtils {
     jsonGenerator.writeEndArray();
     jsonGenerator.close();
   }
+
+  public static void createPingJson(HttpServletResponse response, String ping) throws IOException {
+    JsonFactory factory = new JsonFactory();
+    JsonGenerator jsonGenerator = factory.createGenerator(response.getWriter());
+
+    jsonGenerator.writeStartObject();
+    if (ping != null) {
+      jsonGenerator.writeStringField("hello", "world");
+    } else {
+      jsonGenerator.writeNullField("hello");
+    }
+    jsonGenerator.writeEndObject();
+    jsonGenerator.close();
+  }
 }

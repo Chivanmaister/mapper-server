@@ -17,16 +17,14 @@ public class RestServlet extends HttpServlet {
 
     String requestURI = servletRequest.getRequestURI();
     HandlerFactory handlerFactory = new HandlerFactory();
-    if (!requestURI.equalsIgnoreCase("/")) {
-      try {
-        Handler handler = (Handler) handlerFactory.getDispatcher(requestURI, method);
-        handler.handle(servletRequest, servletResponse);
-      } catch (Exception e) {
-        ErrorHandler errorHandler = new ErrorHandler();
-        errorHandler.handle(e, servletResponse);
-      }
-      servletResponse.setHeader("Content-Type", "application/json");
-      servletResponse.setCharacterEncoding("UTF-8");
+    try {
+      Handler handler = (Handler) handlerFactory.getDispatcher(requestURI, method);
+      handler.handle(servletRequest, servletResponse);
+    } catch (Exception e) {
+      ErrorHandler errorHandler = new ErrorHandler();
+      errorHandler.handle(e, servletResponse);
     }
+    servletResponse.setHeader("Content-Type", "application/json");
+    servletResponse.setCharacterEncoding("UTF-8");
   }
 }
