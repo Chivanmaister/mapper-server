@@ -10,8 +10,12 @@ public class ErrorHandler {
 
   public void handle(Exception e, HttpServletResponse response) throws IOException {
 
-    int errorCode = ((ServiceException) e).getErrorCode();
+
+    int errorCode = 0;
     String message = e.getMessage();
+    if (e instanceof ServiceException) {
+      errorCode = ((ServiceException) e).getErrorCode();
+    }
     JsonUtils.createErrorJson(response, errorCode, message);
   }
 }
