@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="registrator" class="com.ivan.servlet.services.ServiceRegister">
+		<constructor-arg name="service" ref="defaultService"/>
+		<constructor-arg name="repository" ref="defaultRepository"/>
+	</bean>
+	<bean id="defaultService" class="com.ivan.servlet.services.RestService">
+	</bean>
+	<bean id="defaultRepository" class="com.ivan.servlet.repositories.DefaultRepository">
+		<constructor-arg name="dataSource" ref="dataSource"/>
+	</bean>
+	<bean id="dataSource" class="com.mysql.cj.jdbc.MysqlDataSource">
+		<property name="url" value="jdbc:mysql://localhost:3306/Mapper" />
+		<property name="user" value="mapper" />
+		<property name="password" value="Dm3UkrR1O3" />
+ 	</bean>
+</beans>

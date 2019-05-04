@@ -7,17 +7,17 @@ import com.ivan.servlet.exceptions.ServiceException;
 import com.ivan.servlet.repositories.CoordinateDao;
 import com.ivan.servlet.repositories.Repository;
 import com.ivan.servlet.services.CoordinateService;
-import com.ivan.servlet.services.RestService;
+import com.ivan.servlet.services.Service;
 
 import java.util.List;
 
 public class DefaultCoordinateService implements CoordinateService {
 
-  private RestService routeService;
+  private Service service;
   private Repository repository;
 
-  public DefaultCoordinateService(RestService restService, Repository repository) {
-    routeService = restService;
+  public DefaultCoordinateService(Service restService, Repository repository) {
+    service = restService;
     this.repository = repository;
   }
 

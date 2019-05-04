@@ -5,7 +5,7 @@ import com.ivan.servlet.exceptions.InternalErrorException;
 import com.ivan.servlet.exceptions.InvalidEmailException;
 import com.ivan.servlet.exceptions.InvalidUserException;
 import com.ivan.servlet.exceptions.ServiceException;
-import com.ivan.servlet.repositories.Repository;
+import com.ivan.servlet.repositories.DefaultRepository;
 import com.ivan.servlet.repositories.UserDao;
 import com.ivan.servlet.services.RestService;
 import com.ivan.servlet.services.UserService;
@@ -13,11 +13,11 @@ import com.ivan.servlet.services.UserService;
 public class DefaultUserService implements UserService {
 
   private RestService service;
-  private Repository repository;
+  private DefaultRepository defaultRepository;
 
-  public DefaultUserService(RestService service, Repository repository) {
+  public DefaultUserService(RestService service, DefaultRepository defaultRepository) {
     this.service = service;
-    this.repository = repository;
+    this.defaultRepository = defaultRepository;
   }
 
   @Override
@@ -31,7 +31,7 @@ public class DefaultUserService implements UserService {
   public User getUser(String email) throws ServiceException {
     User user;
     try {
-      user = repository.getRepository(UserDao.class).getUser(email);
+      user = defaultRepository.getRepository(UserDao.class).getUser(email);
     } catch (ServiceException e) {
       throw new InternalErrorException("Unknown internal error getting user with email = " + email);
     }
@@ -42,7 +42,7 @@ public class DefaultUserService implements UserService {
   public User addUser(String email) throws ServiceException {
     User user;
     try {
-      user = repository.getRepository(UserDao.class).addUser(email);
+      user = defaultRepository.getRepository(UserDao.class).addUser(email);
     } catch (ServiceException e) {
       throw new InternalErrorException("Unknown internal error adding user with email = " + email);
     }
@@ -53,7 +53,7 @@ public class DefaultUserService implements UserService {
   public void validateUserExists(Integer userId) throws ServiceException {
     User user;
     try {
-      user = repository.getRepository(UserDao.class).getUser(userId);
+      user = defaultRepository.getRepository(UserDao.class).getUser(userId);
       if (user == null) {
         throw new InvalidUserException("User with id [" + userId + "] doesn't exists");
       }

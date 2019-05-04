@@ -6,6 +6,7 @@ public class Coordinate {
   private Double latitude;
   private Double longitude;
   private Integer routeId;
+  private Integer counter;
   private Route route;
 
   public Integer getId() {
@@ -48,6 +49,14 @@ public class Coordinate {
     this.route = route;
   }
 
+  public Integer getCounter() {
+    return counter;
+  }
+
+  public void setCounter(Integer counter) {
+    this.counter = counter;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -59,6 +68,7 @@ public class Coordinate {
     if (latitude != null ? !latitude.equals(that.latitude) : that.latitude != null) return false;
     if (longitude != null ? !longitude.equals(that.longitude) : that.longitude != null) return false;
     if (routeId != null ? !routeId.equals(that.routeId) : that.routeId != null) return false;
+    if (counter != null ? !counter.equals(that.counter) : that.counter != null) return false;
     return route != null ? route.equals(that.route) : that.route == null;
   }
 
@@ -68,6 +78,7 @@ public class Coordinate {
     result = 31 * result + (latitude != null ? latitude.hashCode() : 0);
     result = 31 * result + (longitude != null ? longitude.hashCode() : 0);
     result = 31 * result + (routeId != null ? routeId.hashCode() : 0);
+    result = 31 * result + (counter != null ? counter.hashCode() : 0);
     result = 31 * result + (route != null ? route.hashCode() : 0);
     return result;
   }
@@ -75,11 +86,12 @@ public class Coordinate {
   @Override
   public String toString() {
     return "Coordinate{" +
-        "id=" + id +
-        ", latitude=" + latitude +
-        ", longitude=" + longitude +
-        ", routeId=" + routeId +
-        ", route=" + route +
-        '}';
+            "id=" + id +
+            ", latitude=" + latitude +
+            ", longitude=" + longitude +
+            ", routeId=" + routeId +
+            ", counter=" + counter +
+            ", route=" + route +
+            '}';
   }
 }

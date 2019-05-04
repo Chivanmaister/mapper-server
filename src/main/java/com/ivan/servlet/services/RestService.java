@@ -1,33 +1,25 @@
 package com.ivan.servlet.services;
 
-import com.ivan.servlet.entities.details.History;
 import com.ivan.servlet.exceptions.InvalidServiceException;
 import com.ivan.servlet.exceptions.ServiceException;
-import com.ivan.servlet.repositories.Repository;
-import com.ivan.servlet.services.impl.DefaultCoordinateService;
-import com.ivan.servlet.services.impl.DefaultHistoryService;
-import com.ivan.servlet.services.impl.DefaultRouteService;
-import com.ivan.servlet.services.impl.DefaultUserService;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class RestService {
+public class RestService implements Service {
 
-  private Map<Class, Object> serviceImpl = new HashMap<>();
+  private Map<String, Object> services = new HashMap<>();
 
-  public RestService() {
-    serviceImpl.put(UserService.class, new DefaultUserService(this, new Repository()));
-    serviceImpl.put(RouteService.class, new DefaultRouteService(this, new Repository()));
-    serviceImpl.put(CoordinateService.class, new DefaultCoordinateService(this, new Repository()));
-    serviceImpl.put(HistoryService.class, new DefaultHistoryService(this, new Repository()));
+  public void addService(String name, Object instance) {
+    services.put(name, instance);
   }
 
+  @Override
   @SuppressWarnings("unchecked")
   public <T> T getService(Class<T> serviceClass) throws ServiceException {
-    if (!serviceImpl.containsKey(serviceClass)) {
+    if (!services.containsKey(serviceClass.getName())) {
       throw new InvalidServiceException("Service not found for class = " + serviceClass.toString());
     }
-    return (T) serviceImpl.get(serviceClass);
+    return (T) services.get(serviceClass.getName());
   }
 }

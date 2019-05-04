@@ -4,8 +4,8 @@ import com.ivan.servlet.entities.Route;
 import com.ivan.servlet.exceptions.DaoException;
 import com.ivan.servlet.exceptions.ServiceException;
 import com.ivan.servlet.repositories.RouteDao;
-import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 
+import javax.sql.DataSource;
 import java.sql.*;
 import java.util.Date;
 import java.util.LinkedList;
@@ -13,10 +13,10 @@ import java.util.List;
 
 public class BaseRouteDao implements RouteDao {
 
-  private MysqlDataSource dataSource;
+  private DataSource dataSource;
   private static final String ROUTE_QUERY = " `Route`.`id` as id, `Route`.`date` as date, `Route`.`user_id` as userId, `Route`.`name` as name ";
 
-  public BaseRouteDao(MysqlDataSource dataSource) {
+  public BaseRouteDao(DataSource dataSource) {
     this.dataSource = dataSource;
   }
 

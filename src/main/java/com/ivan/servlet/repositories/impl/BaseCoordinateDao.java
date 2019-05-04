@@ -4,8 +4,8 @@ import com.ivan.servlet.entities.Coordinate;
 import com.ivan.servlet.exceptions.DaoException;
 import com.ivan.servlet.exceptions.ServiceException;
 import com.ivan.servlet.repositories.CoordinateDao;
-import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,10 +15,10 @@ import java.util.List;
 
 public class BaseCoordinateDao implements CoordinateDao {
 
-  private MysqlDataSource dataSource;
-  private static final String COORDINATE_QUERY = " `Coordinates`.`id` as id, `Coordinates`.`latitude` as latitude, `Coordinates`.`longitude` as longitude, `Coordinates`.`route_id` as routeId ";
+  private DataSource dataSource;
+  private static final String COORDINATE_QUERY = " `Coordinate`.`id` as id, `Coordinate`.`latitude` as latitude, `Coordinate`.`longitude` as longitude, `Coordinate`.`route_id` as routeId, `Coordinate`.`counter` as counter ";
 
-  public BaseCoordinateDao(MysqlDataSource dataSource) {
+  public BaseCoordinateDao(DataSource dataSource) {
     this.dataSource = dataSource;
   }
 

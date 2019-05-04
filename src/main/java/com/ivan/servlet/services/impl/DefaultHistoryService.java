@@ -4,7 +4,7 @@ import com.ivan.servlet.entities.Coordinate;
 import com.ivan.servlet.entities.Route;
 import com.ivan.servlet.entities.details.History;
 import com.ivan.servlet.exceptions.ServiceException;
-import com.ivan.servlet.repositories.Repository;
+import com.ivan.servlet.repositories.DefaultRepository;
 import com.ivan.servlet.services.CoordinateService;
 import com.ivan.servlet.services.HistoryService;
 import com.ivan.servlet.services.RestService;
@@ -17,11 +17,11 @@ import java.util.List;
 public class DefaultHistoryService implements HistoryService {
 
   private RestService restService;
-  private Repository repository;
+  private DefaultRepository defaultRepository;
 
-  public DefaultHistoryService(RestService restService, Repository repository) {
+  public DefaultHistoryService(RestService restService, DefaultRepository defaultRepository) {
     this.restService = restService;
-    this.repository = repository;
+    this.defaultRepository = defaultRepository;
   }
 
   @Override
