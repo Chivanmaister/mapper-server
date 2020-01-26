@@ -1,10 +1,7 @@
 package com.ivan.servlet.services.impl;
 
 import com.ivan.servlet.entities.User;
-import com.ivan.servlet.exceptions.InternalErrorException;
-import com.ivan.servlet.exceptions.InvalidEmailException;
-import com.ivan.servlet.exceptions.InvalidUserException;
-import com.ivan.servlet.exceptions.ServiceException;
+import com.ivan.servlet.exceptions.*;
 import com.ivan.servlet.repositories.DefaultRepository;
 import com.ivan.servlet.repositories.UserDao;
 import com.ivan.servlet.services.RestService;
@@ -39,6 +36,17 @@ public class DefaultUserService implements UserService {
   }
 
   @Override
+  public User getUser(Integer userId) throws ServiceException {
+    User user;
+    try {
+      user = defaultRepository.getRepository(UserDao.class).getUser(userId);
+    } catch (ServiceException e) {
+      throw new InternalErrorException("Unknown internal error getting user with id = " + userId);
+    }
+    return user;
+  }
+
+  @Override
   public User addUser(String email) throws ServiceException {
     User user;
     try {
@@ -51,14 +59,28 @@ public class DefaultUserService implements UserService {
 
   @Override
   public void validateUserExists(Integer userId) throws ServiceException {
-    User user;
+    boolean exists;
     try {
-      user = defaultRepository.getRepository(UserDao.class).getUser(userId);
-      if (user == null) {
-        throw new InvalidUserException("User with id [" + userId + "] doesn't exists");
-      }
-    } catch (ServiceException e) {
+      exists = defaultRepository.getRepository(UserDao.class).checkUserExists(userId);
+    } catch (DaoException e) {
       throw new InternalErrorException("Unknown internal error getting user with id = " + userId);
+    }
+    if (!exists) {
+      throw new UserNotExistsException("User with id [" + userId + "] doesn't exists");
+    }
+  }
+
+  @Override
+  public void validateUserExists(String email) throws ServiceException {
+    boolean exists;
+    try {
+      exists = defaultRepository.getRepository(UserDao.class).checkUserExists(email);
+    } catch (DaoException de) {
+      String message = "Unknown internal error getting user with email = " + email;
+      throw new InternalErrorException(message);
+    }
+    if (!exists) {
+      throw new UserNotExistsException("User with email [" + email + "] doesn't exists");
     }
   }
 }

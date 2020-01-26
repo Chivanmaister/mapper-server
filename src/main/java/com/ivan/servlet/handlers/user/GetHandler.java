@@ -22,7 +22,7 @@ public class GetHandler implements Handler {
   public void handle(HttpServletRequest request, HttpServletResponse response) throws ServiceException, IOException {
     String email = getEmail(request);
     User user = userService.getUser(email);
-    JsonUtils.createUserJson(response, user);
+//    JsonUtils.createUserJson(response, user);
   }
 
   private String getEmail(HttpServletRequest request) throws ServiceException {

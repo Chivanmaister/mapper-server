@@ -12,6 +12,7 @@
         <sourceRoots>
           <root url="file://$MODULE_DIR$/src/main/java" />
           <root url="file://$MODULE_DIR$/src/main/resources" />
+          <root url="file://$MODULE_DIR$/src/main/resoursces" />
         </sourceRoots>
       </configuration>
     </facet>
@@ -20,6 +21,7 @@
         <fileset id="fileset" name="Local Service" removed="false">
           <file>file://$MODULE_DIR$/src/main/resoursces/local-service.xml</file>
           <file>file://$MODULE_DIR$/src/main/java/com/ivan/servlet/Application.java</file>
+          <file>file://$MODULE_DIR$/src/main/resoursces/local-context.xml</file>
         </fileset>
       </configuration>
     </facet>

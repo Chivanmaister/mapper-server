@@ -7,7 +7,7 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
-@ImportResource("classpath:local-service.xml")
+@ImportResource("classpath:local-context.xml")
 public class Application extends SpringBootServletInitializer {
 
   @Override

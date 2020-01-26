@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface CoordinateService {
 
-  void addCoordinate(Double latitude, Double longitude, Integer routeId) throws ServiceException;
+  Coordinate addCoordinate(Double latitude, Double longitude, Integer routeId) throws ServiceException;
 
   void validateLatitude(Double latitude) throws ServiceException;
 

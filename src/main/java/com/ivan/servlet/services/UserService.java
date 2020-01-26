@@ -10,7 +10,11 @@ public interface UserService {
 
   User getUser(String email) throws ServiceException;
 
+  User getUser(Integer userId) throws ServiceException;
+
   User addUser(String email) throws ServiceException;
 
   void validateUserExists(Integer userId) throws ServiceException;
+
+  void validateUserExists(String email) throws ServiceException;
 }

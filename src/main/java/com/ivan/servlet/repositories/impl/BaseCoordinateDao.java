@@ -1,15 +1,13 @@
 package com.ivan.servlet.repositories.impl;
 
 import com.ivan.servlet.entities.Coordinate;
+import com.ivan.servlet.entities.Route;
 import com.ivan.servlet.exceptions.DaoException;
 import com.ivan.servlet.exceptions.ServiceException;
 import com.ivan.servlet.repositories.CoordinateDao;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -22,18 +20,29 @@ public class BaseCoordinateDao implements CoordinateDao {
     this.dataSource = dataSource;
   }
 
-  public void addCoordinate(Double latitude, Double longitude, Integer routeId) throws ServiceException {
-    String insertQuery = "INSERT INTO `Coordinates`(`latitude`, `longitude`, `route_id`) VALUES (?, ?, ?);";
-    Connection connection = null;
+  public Coordinate addCoordinate(Double latitude, Double longitude, Integer routeId) throws ServiceException {
+    Coordinate coordinate = null;
     PreparedStatement preparedStatement = null;
+    Connection connection = null;
+    String insertQuery = "INSERT INTO `Coordinates`(`latitude`, `longitude`, `route_id`) VALUES (?, ?, ?);";
+    ResultSet resultSet;
 
     try {
       connection = dataSource.getConnection();
-      preparedStatement = connection.prepareStatement(insertQuery);
+      preparedStatement = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
       preparedStatement.setDouble(1, latitude);
       preparedStatement.setDouble(2, longitude);
       preparedStatement.setInt(3, routeId);
       preparedStatement.executeUpdate();
+      resultSet = preparedStatement.getGeneratedKeys();
+
+      if (resultSet.next()) {
+        coordinate = new Coordinate();
+        coordinate.setId(resultSet.getInt(1));
+        coordinate.setLatitude(latitude);
+        coordinate.setLongitude(longitude);
+        coordinate.setRouteId(routeId);
+      }
     } catch (SQLException e) {
       throw new DaoException("Error inserting coordinate into database");
     } finally {
@@ -47,15 +56,16 @@ public class BaseCoordinateDao implements CoordinateDao {
       } catch (SQLException ignored) {
       }
     }
+    return coordinate;
   }
 
   @Override
   public List<Coordinate> findCoordinates(Integer routeId) throws DaoException {
     String queryString = "SELECT " +
-        COORDINATE_QUERY +
-        " FROM `Coordinates` " +
-        " WHERE `Coordinates`.`route_id` = ?" +
-        ";";
+            COORDINATE_QUERY +
+            " FROM `Coordinates` " +
+            " WHERE `Coordinates`.`route_id` = ?" +
+            ";";
     List<Coordinate> coordinates = new LinkedList<>();
     Connection connection = null;
     PreparedStatement preparedStatement = null;

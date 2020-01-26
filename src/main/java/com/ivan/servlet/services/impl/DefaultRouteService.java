@@ -31,7 +31,10 @@ public class DefaultRouteService implements RouteService {
     if (routeId == null) {
       throw new InvalidRouteIdException("Invalid route identifier");
     }
-    defaultRepository.getRepository(RouteDao.class);
+    Route route = defaultRepository.getRepository(RouteDao.class).getRoute(routeId);
+    if (route != null) {
+      throw new InvalidRouteIdException("Route not exists");
+    }
   }
 
   @Override
@@ -44,5 +47,10 @@ public class DefaultRouteService implements RouteService {
     List<Route> routes;
     routes = defaultRepository.getRepository(RouteDao.class).findRoutesByUser(userId, name, fromDate, toDate);
     return routes;
+  }
+
+  @Override
+  public Route getById(Integer routeId) throws ServiceException {
+    return defaultRepository.getRepository(RouteDao.class).getRoute(routeId);
   }
 }

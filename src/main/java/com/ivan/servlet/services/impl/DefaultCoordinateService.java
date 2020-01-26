@@ -21,8 +21,8 @@ public class DefaultCoordinateService implements CoordinateService {
     this.repository = repository;
   }
 
-  public void addCoordinate(Double latitude, Double longitude, Integer routeId) throws ServiceException {
-    repository.getRepository(CoordinateDao.class).addCoordinate(latitude, longitude, routeId);
+  public Coordinate addCoordinate(Double latitude, Double longitude, Integer routeId) throws ServiceException {
+    return repository.getRepository(CoordinateDao.class).addCoordinate(latitude, longitude, routeId);
   }
 
   public void validateLatitude(Double latitude) throws ServiceException {

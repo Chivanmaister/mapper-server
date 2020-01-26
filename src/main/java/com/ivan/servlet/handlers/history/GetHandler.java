@@ -29,7 +29,7 @@ public class GetHandler implements Handler {
     String name = getName(request);
 
     List<History> histories = restService.getService(HistoryService.class).getHistoryList(userId, name, dateFrom, dateTo);
-    JsonUtils.createHistoryJson(response, histories);
+//    JsonUtils.createHistoryResponse(response, histories);
   }
 
   private String getName(HttpServletRequest request) {

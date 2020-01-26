@@ -53,6 +53,8 @@ public class HandlerFactory {
       throw new ServiceException(ErrorCodes.INTERNAL_ERROR, "Error instantiating");
     } catch (InvocationTargetException e) {
       throw new ServiceException(ErrorCodes.INTERNAL_ERROR, "Error in invocation target");
+    } catch (Exception e) {
+      throw new ServiceException(ErrorCodes.INTERNAL_ERROR, "Unexpected error");
     }
     return handler;
   }

@@ -20,10 +20,10 @@ public class BaseUserDao implements UserDao {
   @Override
   public User getUser(String email) throws ServiceException {
     String userQuery = "SELECT " +
-        USER_QUERY +
-        "   FROM `User` " +
-        "   WHERE `User`.`email` = ? " +
-        "   ;";
+            USER_QUERY +
+            "   FROM `User` " +
+            "   WHERE `User`.`email` = ? " +
+            "   ;";
     User user = null;
     Connection connection = null;
     PreparedStatement preparedStatement = null;
@@ -63,10 +63,10 @@ public class BaseUserDao implements UserDao {
   @Override
   public User getUser(Integer id) throws ServiceException {
     String userQuery = "SELECT " +
-        USER_QUERY +
-        "   FROM `User` " +
-        "   WHERE `User`.`id` = ? " +
-        "   ;";
+            USER_QUERY +
+            "   FROM `User` " +
+            "   WHERE `User`.`id` = ? " +
+            "   ;";
     User user = null;
     Connection connection = null;
     PreparedStatement preparedStatement = null;
@@ -122,6 +122,7 @@ public class BaseUserDao implements UserDao {
       if (resultSet.next()) {
         user = new User();
         user.setId(resultSet.getInt(1));
+        user.setEmail(email);
       }
     } catch (SQLException e) {
       throw new DaoException("Error adding user to database");
@@ -141,5 +142,73 @@ public class BaseUserDao implements UserDao {
     }
 
     return user;
+  }
+
+  @Override
+  public boolean checkUserExists(String email) throws DaoException {
+    String userQuery = "SELECT (1) FROM `User` WHERE `email` = ?;";
+
+    Connection connection = null;
+    PreparedStatement preparedStatement = null;
+    ResultSet resultSet = null;
+    boolean exists = false;
+
+    try {
+      connection = dataSource.getConnection();
+      preparedStatement = connection.prepareStatement(userQuery, PreparedStatement.RETURN_GENERATED_KEYS);
+      preparedStatement.setString(1, email);
+      resultSet = preparedStatement.executeQuery();
+      exists = resultSet.next();
+    } catch (SQLException e) {
+      throw new DaoException("Error adding user to database");
+    } finally {
+      try {
+        if (connection != null) {
+          connection.close();
+        }
+        if (preparedStatement != null) {
+          preparedStatement.close();
+        }
+        if (resultSet != null) {
+          resultSet.close();
+        }
+      } catch (SQLException ignored) {
+      }
+    }
+    return exists;
+  }
+
+  @Override
+  public boolean checkUserExists(Integer userId) throws DaoException {
+    String userQuery = "SELECT (1) FROM `User` WHERE `id` = ?;";
+
+    Connection connection = null;
+    PreparedStatement preparedStatement = null;
+    ResultSet resultSet = null;
+    boolean exists = false;
+
+    try {
+      connection = dataSource.getConnection();
+      preparedStatement = connection.prepareStatement(userQuery, PreparedStatement.RETURN_GENERATED_KEYS);
+      preparedStatement.setInt(1, userId);
+      resultSet = preparedStatement.executeQuery();
+      exists = resultSet.next();
+    } catch (SQLException e) {
+      throw new DaoException("Error adding user to database");
+    } finally {
+      try {
+        if (connection != null) {
+          connection.close();
+        }
+        if (preparedStatement != null) {
+          preparedStatement.close();
+        }
+        if (resultSet != null) {
+          resultSet.close();
+        }
+      } catch (SQLException ignored) {
+      }
+    }
+    return exists;
   }
 }

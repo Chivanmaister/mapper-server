@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface CoordinateDao {
 
-  void addCoordinate(Double latitude, Double longitude, Integer routeId) throws ServiceException;
+  Coordinate addCoordinate(Double latitude, Double longitude, Integer routeId) throws ServiceException;
 
   List<Coordinate> findCoordinates(Integer routeId) throws DaoException;
 }

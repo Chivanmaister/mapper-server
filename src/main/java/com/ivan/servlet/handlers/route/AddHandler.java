@@ -28,7 +28,7 @@ public class AddHandler implements Handler {
         Integer userId = getUserId(request);
         String name = getName(request);
         Route route = routeService.addRoute(name, userId);
-        JsonUtils.createRouteJson(response, route);
+//        JsonUtils.createRouteJson(response, route);
     }
 
     private Integer getUserId(HttpServletRequest request) throws ServiceException {

@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="mapper@localhost" uuid="cdb11ec2-046c-4553-992b-e5847b42b2de">
-      <database-info product="MySQL" version="5.7.12-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.44 ( Revision: b3cda4f864902ffdde495b9df93937c3e20009be )" family="MYSQL" exact-version="5.7.12">
+    <data-source name="MySQL - Mapper@localhost" uuid="cdb11ec2-046c-4553-992b-e5847b42b2de">
+      <database-info product="MySQL" version="5.7.28-0ubuntu0.18.04.4" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.15 (Revision: 79a4336f140499bd22dd07f02b708e163844e3d5)" dbms="MYSQL" exact-version="5.7.28" exact-driver-version="8.0">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
-      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
-      <user-name>mapperdb</user-name>
-      <introspection-schemas>*:mapper</introspection-schemas>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <user-name>mapper</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="schema" qname="Mapper" />
+        </introspection-scope>
+      </schema-mapping>
     </data-source>
   </component>
 </project>

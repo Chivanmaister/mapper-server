@@ -15,4 +15,6 @@ public interface RouteService {
   void updateRouteName(Integer id, String name) throws ServiceException;
 
   List<Route> findRoutes(Integer userId, String name, Date fromDate, Date toDate) throws ServiceException;
+
+  Route getById(Integer routeId) throws ServiceException;
 }

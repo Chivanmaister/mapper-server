@@ -19,6 +19,6 @@ public class PingHandler implements Handler {
   @Override
   public void handle(HttpServletRequest request, HttpServletResponse response) throws IOException, ServiceException {
     String ping = request.getParameter("hello");
-    JsonUtils.createPingJson(response, ping);
+    JsonUtils.createPingResponse(response, ping);
   }
 }

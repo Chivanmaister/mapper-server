@@ -9,13 +9,14 @@ import com.ivan.servlet.entities.details.History;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.StringWriter;
 import java.util.List;
 
 public class JsonUtils {
 
-  public static void createUserJson(HttpServletResponse response, User user) throws IOException {
+  public static void createUserResponse(StringWriter response, User user) throws IOException {
     JsonFactory factory = new JsonFactory();
-    JsonGenerator jsonGenerator = factory.createGenerator(response.getWriter());
+    JsonGenerator jsonGenerator = factory.createGenerator(response);
 
     jsonGenerator.writeStartObject();
     if (user != null) {
@@ -37,9 +38,9 @@ public class JsonUtils {
     jsonGenerator.close();
   }
 
-  public static void createRouteJson(HttpServletResponse response, Route route) throws IOException {
+  public static void createRouteResponse(StringWriter response, Route route) throws IOException {
     JsonFactory factory = new JsonFactory();
-    JsonGenerator jsonGenerator = factory.createGenerator(response.getWriter());
+    JsonGenerator jsonGenerator = factory.createGenerator(response);
 
     jsonGenerator.writeStartObject();
     if (route != null) {
@@ -73,9 +74,9 @@ public class JsonUtils {
     jsonGenerator.close();
   }
 
-  public static void createErrorJson(HttpServletResponse response, int errorCode, String message) throws IOException {
+  public static void createErrorResponse(StringWriter response, int errorCode, String message) throws IOException {
     JsonFactory factory = new JsonFactory();
-    JsonGenerator jsonGenerator = factory.createGenerator(response.getWriter());
+    JsonGenerator jsonGenerator = factory.createGenerator(response);
 
     jsonGenerator.writeStartObject();
     if (errorCode != 0) {
@@ -92,9 +93,9 @@ public class JsonUtils {
     jsonGenerator.close();
   }
 
-  public static void createHistoryJson(HttpServletResponse response, List<History> histories) throws IOException {
+  public static void createHistoryResponse(StringWriter response, List<History> histories) throws IOException {
     JsonFactory factory = new JsonFactory();
-    JsonGenerator jsonGenerator = factory.createGenerator(response.getWriter());
+    JsonGenerator jsonGenerator = factory.createGenerator(response);
 
     jsonGenerator.writeStartArray();
     for (History history : histories) {
@@ -159,7 +160,7 @@ public class JsonUtils {
     jsonGenerator.close();
   }
 
-  public static void createPingJson(HttpServletResponse response, String ping) throws IOException {
+  public static void createPingResponse(HttpServletResponse response, String ping) throws IOException {
     JsonFactory factory = new JsonFactory();
     JsonGenerator jsonGenerator = factory.createGenerator(response.getWriter());
 
@@ -168,6 +169,42 @@ public class JsonUtils {
       jsonGenerator.writeStringField("hello", "world");
     } else {
       jsonGenerator.writeNullField("hello");
+    }
+    jsonGenerator.writeEndObject();
+    jsonGenerator.close();
+  }
+
+  public static void createCoordinateResponse(StringWriter response, Coordinate coordinate) throws IOException {
+    JsonFactory factory = new JsonFactory();
+    JsonGenerator jsonGenerator = factory.createGenerator(response);
+
+    jsonGenerator.writeStartObject();
+    if (coordinate != null) {
+      if (coordinate.getId() != null) {
+        jsonGenerator.writeNumberField("id", coordinate.getId());
+      } else {
+        jsonGenerator.writeNullField("id");
+      }
+      if (coordinate.getLatitude() != null) {
+        jsonGenerator.writeNumberField("latitude", coordinate.getLatitude());
+      } else {
+        jsonGenerator.writeNullField("latitude");
+      }
+      if (coordinate.getLongitude() != null) {
+        jsonGenerator.writeNumberField("longitude", coordinate.getLongitude());
+      } else {
+        jsonGenerator.writeNullField("longitude");
+      }
+      if (coordinate.getRouteId() != null) {
+        jsonGenerator.writeNumberField("routeId", coordinate.getRouteId());
+      } else {
+        jsonGenerator.writeNullField("routeId");
+      }
+    } else {
+      jsonGenerator.writeNullField("id");
+      jsonGenerator.writeNullField("latitude");
+      jsonGenerator.writeNullField("longitude");
+      jsonGenerator.writeNullField("routeId");
     }
     jsonGenerator.writeEndObject();
     jsonGenerator.close();
