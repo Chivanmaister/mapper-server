@@ -12,10 +12,7 @@
     <build>
         <resources>
             <resource>
-                <directory>src/main/resoursces</directory>
-                <!--                <includes>-->
-                <!--                    <include>local-context.xml</include>-->
-                <!--                </includes>-->
+                <directory>src/main/resources</directory>
             </resource>
         </resources>
         <finalName>sample</finalName>
@@ -97,24 +94,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <!--<exclusions>-->
-            <!--<exclusion>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
-            <!--</exclusion>-->
-            <!--</exclusions>-->
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
-        <!--<dependency>-->
-        <!--<groupId>com.fasterxml.jackson.core</groupId>-->
-        <!--<artifactId>jackson-core</artifactId>-->
-        <!--<version>2.10.1</version>-->
-        <!--</dependency>-->
 
         <dependency>
             <groupId>mysql</groupId>
@@ -122,25 +107,6 @@
             <version>6.0.5</version>
         </dependency>
     </dependencies>
-
-    <repositories>
-        <!--<defaultRepository>-->
-        <!--<id>spring-snapshots</id>-->
-        <!--<name>Spring Snapshots</name>-->
-        <!--<url>http://repo.spring.io/snapshot</url>-->
-        <!--<snapshots>-->
-        <!--<enabled>true</enabled>-->
-        <!--</snapshots>-->
-        <!--</defaultRepository>-->
-        <!--<defaultRepository>-->
-        <!--<id>spring-milestones</id>-->
-        <!--<name>Spring Milestones</name>-->
-        <!--<url>http://repo.spring.io/milestone</url>-->
-        <!--<snapshots>-->
-        <!--<enabled>false</enabled>-->
-        <!--</snapshots>-->
-        <!--</defaultRepository>-->
-    </repositories>
 
     <pluginRepositories>
         <pluginRepository>

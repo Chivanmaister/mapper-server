@@ -6,19 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a291d99-451c-4a32-adb0-50876cfe8d67" name="Default" comment="Added entry point controllers, fixed export to .jar on install, updated response.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/ErrorHandler.java" afterDir="false" />
+    <list default="true" id="9a291d99-451c-4a32-adb0-50876cfe8d67" name="Default" comment="Fixed error handling - sending JSON on error">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/Handler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/coordinate/AddCoordinateHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/coordinate/AddCoordinateHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/history/GetHistoryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/history/GetHistoryHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/route/AddRouteHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/route/AddRouteHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/route/GetRouteHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/route/GetRouteHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/route/UpdateRouteHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/route/UpdateRouteHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/user/AddUserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/user/AddUserHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/user/GetUserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/user/GetUserHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/json/JsonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/json/JsonUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/repositories/impl/BaseUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/repositories/impl/BaseUserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <list id="2ae482f8-ca8c-4f4e-b771-052ae28328c5" name="Ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +103,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1577712110688" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="spring" />
@@ -308,7 +298,7 @@
       <workItem from="1580832950040" duration="32000" />
       <workItem from="1580833083076" duration="12000" />
       <workItem from="1581751659962" duration="773000" />
-      <workItem from="1581924222643" duration="10632000" />
+      <workItem from="1581924222643" duration="10872000" />
     </task>
     <task id="LOCAL-00001" summary="New exceptions&#10;Updated handlers:&#10;  route/AddHandler&#10;  user/AddHandler, user/GetHandler&#10;Created handlers:&#10;  coordinate/AddHandler&#10;  route/UpdateHandler&#10;Updated services:&#10;  RestService&#10;  RouteService&#10;  DefaultRouteService&#10;Created services:&#10;  CoordinateService&#10;  DefaultCoordinateService&#10;Updated repositories:&#10;  BaseCoordinateDao&#10;  BaseRouteDao&#10;  BaseUserDao&#10;  CoordinateDao&#10;  Repository&#10;  RouteDao&#10;Base updates: &#10;  RestServlet&#10;  JsonUtils">
       <created>1511043462270</created>
@@ -373,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580030029905</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Fixed error handling - sending JSON on error">
+      <created>1581935512776</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1581935512776</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,9 +402,14 @@
     <MESSAGE value="Created history for routes - added route and coordinate methods in dao layer. Refactored code. Servlet is in finishing stage." />
     <MESSAGE value="Servlet changed into SpringBoot servlet; updated services and repositories." />
     <MESSAGE value="Added entry point controllers, fixed export to .jar on install, updated response." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added entry point controllers, fixed export to .jar on install, updated response." />
+    <MESSAGE value="Fixed error handling - sending JSON on error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed error handling - sending JSON on error" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="555" y="181" width="800" height="677" key="#Project_Structure" timestamp="1581935641085">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state x="555" y="181" width="800" height="677" key="#Project_Structure/0.27.1920.988@0.27.1920.988" timestamp="1581935641085" />
     <state x="793" y="378" width="324" height="284" key="#com.intellij.debugger.actions.ViewTextAction" timestamp="1581926685520">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
@@ -420,10 +422,10 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="768" y="232" width="374" height="575" key="#com.intellij.ide.util.MemberChooser/0.27.1920.988@0.27.1920.988" timestamp="1581934898299" />
-    <state x="439" y="116" width="1031" height="807" key="CommitChangelistDialog2" timestamp="1580030029011">
+    <state x="439" y="116" width="1031" height="807" key="CommitChangelistDialog2" timestamp="1581935512475">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="439" y="116" width="1031" height="807" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1580030029011" />
+    <state x="439" y="116" width="1031" height="807" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1581935512475" />
     <state width="1874" height="310" key="GridCell.Tab.0.bottom" timestamp="1581935484100">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
