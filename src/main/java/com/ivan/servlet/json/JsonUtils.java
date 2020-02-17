@@ -14,9 +14,10 @@ import java.util.List;
 
 public class JsonUtils {
 
+  private static final JsonFactory jsonFactory = new JsonFactory();
+
   public static void createUserResponse(StringWriter response, User user) throws IOException {
-    JsonFactory factory = new JsonFactory();
-    JsonGenerator jsonGenerator = factory.createGenerator(response);
+    JsonGenerator jsonGenerator = jsonFactory.createGenerator(response);
 
     jsonGenerator.writeStartObject();
     if (user != null) {
@@ -39,8 +40,7 @@ public class JsonUtils {
   }
 
   public static void createRouteResponse(StringWriter response, Route route) throws IOException {
-    JsonFactory factory = new JsonFactory();
-    JsonGenerator jsonGenerator = factory.createGenerator(response);
+    JsonGenerator jsonGenerator = jsonFactory.createGenerator(response);
 
     jsonGenerator.writeStartObject();
     if (route != null) {
@@ -75,8 +75,7 @@ public class JsonUtils {
   }
 
   public static void createErrorResponse(StringWriter response, int errorCode, String message) throws IOException {
-    JsonFactory factory = new JsonFactory();
-    JsonGenerator jsonGenerator = factory.createGenerator(response);
+    JsonGenerator jsonGenerator = jsonFactory.createGenerator(response);
 
     jsonGenerator.writeStartObject();
     if (errorCode != 0) {
@@ -94,8 +93,7 @@ public class JsonUtils {
   }
 
   public static void createHistoryResponse(StringWriter response, List<History> histories) throws IOException {
-    JsonFactory factory = new JsonFactory();
-    JsonGenerator jsonGenerator = factory.createGenerator(response);
+    JsonGenerator jsonGenerator = jsonFactory.createGenerator(response);
 
     jsonGenerator.writeStartArray();
     for (History history : histories) {
@@ -161,8 +159,7 @@ public class JsonUtils {
   }
 
   public static void createPingResponse(HttpServletResponse response, String ping) throws IOException {
-    JsonFactory factory = new JsonFactory();
-    JsonGenerator jsonGenerator = factory.createGenerator(response.getWriter());
+    JsonGenerator jsonGenerator = jsonFactory.createGenerator(response.getWriter());
 
     jsonGenerator.writeStartObject();
     if (ping != null) {
@@ -175,8 +172,7 @@ public class JsonUtils {
   }
 
   public static void createCoordinateResponse(StringWriter response, Coordinate coordinate) throws IOException {
-    JsonFactory factory = new JsonFactory();
-    JsonGenerator jsonGenerator = factory.createGenerator(response);
+    JsonGenerator jsonGenerator = jsonFactory.createGenerator(response);
 
     jsonGenerator.writeStartObject();
     if (coordinate != null) {

@@ -6,49 +6,19 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a291d99-451c-4a32-adb0-50876cfe8d67" name="Default" comment="Servlet changed into SpringBoot servlet; updated services and repositories.">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/Handler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/coordinate/AddCoordinateHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/history/GetHistoryHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/route/AddRouteHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/route/GetRouteHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/route/UpdateRouteHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/user/AddUserHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/user/GetUserHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/MapperAppServer_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/MapperAppServer_war.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/MapperAppServer_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/MapperAppServer_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cdb11ec2-046c-4553-992b-e5847b42b2de.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cdb11ec2-046c-4553-992b-e5847b42b2de.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="9a291d99-451c-4a32-adb0-50876cfe8d67" name="Default" comment="Added entry point controllers, fixed export to .jar on install, updated response.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/ErrorHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MapperAppServer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MapperAppServer.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/exceptions/InvalidUserException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/exceptions/UserNotExistsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/handlers/ErrorHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/handlers/PingHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/handlers/PingHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/handlers/history/GetHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/handlers/history/GetHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/handlers/route/AddHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/handlers/route/AddHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/handlers/user/AddHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/handlers/user/AddHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/handlers/user/GetHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/handlers/user/GetHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/Handler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/coordinate/AddCoordinateHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/coordinate/AddCoordinateHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/history/GetHistoryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/history/GetHistoryHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/route/AddRouteHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/route/AddRouteHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/route/GetRouteHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/route/GetRouteHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/route/UpdateRouteHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/route/UpdateRouteHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/user/AddUserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/user/AddUserHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/user/GetUserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/user/GetUserHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/json/JsonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/json/JsonUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/repositories/CoordinateDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/repositories/CoordinateDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/repositories/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/repositories/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/repositories/impl/BaseCoordinateDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/repositories/impl/BaseCoordinateDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/repositories/impl/BaseUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/repositories/impl/BaseUserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/rest/RestServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/rest/helper/HandlerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/rest/helper/HandlerFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/services/CoordinateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/services/CoordinateService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/services/RouteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/services/RouteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/services/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/services/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/services/impl/DefaultCoordinateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/services/impl/DefaultCoordinateService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/services/impl/DefaultRouteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/services/impl/DefaultRouteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/services/impl/DefaultUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ivan/servlet/services/impl/DefaultUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resoursces/local-service.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resoursces/local-context.xml" afterDir="false" />
     </list>
     <list id="2ae482f8-ca8c-4f4e-b771-052ae28328c5" name="Ignored" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -136,6 +106,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="webApplica&#9;FILE&#9;jar:///home/chivan/.m2/repository/org/springframework/spring-web/4.3.14.RELEASE/spring-web-4.3.14.RELEASE.jar!/org/springframework/web/context/WebApplicationContext.class" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -332,6 +303,12 @@
       <workItem from="1579951108933" duration="7945000" />
       <workItem from="1580028036628" duration="637000" />
       <workItem from="1580028914004" duration="72000" />
+      <workItem from="1580029501706" duration="609000" />
+      <workItem from="1580831898349" duration="313000" />
+      <workItem from="1580832950040" duration="32000" />
+      <workItem from="1580833083076" duration="12000" />
+      <workItem from="1581751659962" duration="773000" />
+      <workItem from="1581924222643" duration="10632000" />
     </task>
     <task id="LOCAL-00001" summary="New exceptions&#10;Updated handlers:&#10;  route/AddHandler&#10;  user/AddHandler, user/GetHandler&#10;Created handlers:&#10;  coordinate/AddHandler&#10;  route/UpdateHandler&#10;Updated services:&#10;  RestService&#10;  RouteService&#10;  DefaultRouteService&#10;Created services:&#10;  CoordinateService&#10;  DefaultCoordinateService&#10;Updated repositories:&#10;  BaseCoordinateDao&#10;  BaseRouteDao&#10;  BaseUserDao&#10;  CoordinateDao&#10;  Repository&#10;  RouteDao&#10;Base updates: &#10;  RestServlet&#10;  JsonUtils">
       <created>1511043462270</created>
@@ -389,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1556960906738</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added entry point controllers, fixed export to .jar on install, updated response.">
+      <created>1580030029905</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1580030029905</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -420,69 +404,74 @@
     <MESSAGE value="Updated names of exceptions. Added error handler." />
     <MESSAGE value="Created history for routes - added route and coordinate methods in dao layer. Refactored code. Servlet is in finishing stage." />
     <MESSAGE value="Servlet changed into SpringBoot servlet; updated services and repositories." />
-    <option name="LAST_COMMIT_MESSAGE" value="Servlet changed into SpringBoot servlet; updated services and repositories." />
+    <MESSAGE value="Added entry point controllers, fixed export to .jar on install, updated response." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added entry point controllers, fixed export to .jar on install, updated response." />
   </component>
   <component name="WindowStateProjectService">
+    <state x="793" y="378" width="324" height="284" key="#com.intellij.debugger.actions.ViewTextAction" timestamp="1581926685520">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state x="793" y="378" width="324" height="284" key="#com.intellij.debugger.actions.ViewTextAction/0.27.1920.988@0.27.1920.988" timestamp="1581926685520" />
     <state x="555" y="181" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579346746180">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="555" y="181" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.988@0.27.1920.988" timestamp="1579346746180" />
-    <state x="768" y="232" width="374" height="575" key="#com.intellij.ide.util.MemberChooser" timestamp="1579340921735">
+    <state x="768" y="232" width="374" height="575" key="#com.intellij.ide.util.MemberChooser" timestamp="1581934898299">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="768" y="232" width="374" height="575" key="#com.intellij.ide.util.MemberChooser/0.27.1920.988@0.27.1920.988" timestamp="1579340921735" />
-    <state x="439" y="116" width="1031" height="807" key="CommitChangelistDialog2" timestamp="1580029687685">
+    <state x="768" y="232" width="374" height="575" key="#com.intellij.ide.util.MemberChooser/0.27.1920.988@0.27.1920.988" timestamp="1581934898299" />
+    <state x="439" y="116" width="1031" height="807" key="CommitChangelistDialog2" timestamp="1580030029011">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state x="439" y="116" width="1031" height="807" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1580029687685" />
-    <state width="1874" height="310" key="GridCell.Tab.0.bottom" timestamp="1579961062365">
+    <state x="439" y="116" width="1031" height="807" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1580030029011" />
+    <state width="1874" height="310" key="GridCell.Tab.0.bottom" timestamp="1581935484100">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="310" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1579961062365" />
-    <state width="1874" height="310" key="GridCell.Tab.0.center" timestamp="1579961062364">
+    <state width="1874" height="310" key="GridCell.Tab.0.bottom/0.27.1920.988@0.27.1920.988" timestamp="1581935484100" />
+    <state width="1874" height="310" key="GridCell.Tab.0.center" timestamp="1581935484099">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="310" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1579961062364" />
-    <state width="1874" height="310" key="GridCell.Tab.0.left" timestamp="1579961062364">
+    <state width="1874" height="310" key="GridCell.Tab.0.center/0.27.1920.988@0.27.1920.988" timestamp="1581935484099" />
+    <state width="1874" height="310" key="GridCell.Tab.0.left" timestamp="1581935484099">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="310" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1579961062364" />
-    <state width="1874" height="310" key="GridCell.Tab.0.right" timestamp="1579961062365">
+    <state width="1874" height="310" key="GridCell.Tab.0.left/0.27.1920.988@0.27.1920.988" timestamp="1581935484099" />
+    <state width="1874" height="310" key="GridCell.Tab.0.right" timestamp="1581935484100">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="310" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1579961062365" />
-    <state width="1874" height="219" key="GridCell.Tab.1.bottom" timestamp="1579351471193">
+    <state width="1874" height="310" key="GridCell.Tab.0.right/0.27.1920.988@0.27.1920.988" timestamp="1581935484100" />
+    <state width="1874" height="216" key="GridCell.Tab.1.bottom" timestamp="1581935457008">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="219" key="GridCell.Tab.1.bottom/0.27.1920.988@0.27.1920.988" timestamp="1579351471193" />
-    <state width="1874" height="219" key="GridCell.Tab.1.center" timestamp="1579351471192">
+    <state width="1874" height="216" key="GridCell.Tab.1.bottom/0.27.1920.988@0.27.1920.988" timestamp="1581935457008" />
+    <state width="1874" height="216" key="GridCell.Tab.1.center" timestamp="1581935457007">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="219" key="GridCell.Tab.1.center/0.27.1920.988@0.27.1920.988" timestamp="1579351471192" />
-    <state width="1874" height="219" key="GridCell.Tab.1.left" timestamp="1579351471192">
+    <state width="1874" height="216" key="GridCell.Tab.1.center/0.27.1920.988@0.27.1920.988" timestamp="1581935457007" />
+    <state width="1874" height="216" key="GridCell.Tab.1.left" timestamp="1581935457007">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="219" key="GridCell.Tab.1.left/0.27.1920.988@0.27.1920.988" timestamp="1579351471192" />
-    <state width="1874" height="219" key="GridCell.Tab.1.right" timestamp="1579351471193">
+    <state width="1874" height="216" key="GridCell.Tab.1.left/0.27.1920.988@0.27.1920.988" timestamp="1581935457007" />
+    <state width="1874" height="216" key="GridCell.Tab.1.right" timestamp="1581935457007">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="219" key="GridCell.Tab.1.right/0.27.1920.988@0.27.1920.988" timestamp="1579351471193" />
-    <state width="1874" height="219" key="GridCell.Tab.2.bottom" timestamp="1579351471194">
+    <state width="1874" height="216" key="GridCell.Tab.1.right/0.27.1920.988@0.27.1920.988" timestamp="1581935457007" />
+    <state width="1874" height="216" key="GridCell.Tab.2.bottom" timestamp="1581935457008">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="219" key="GridCell.Tab.2.bottom/0.27.1920.988@0.27.1920.988" timestamp="1579351471194" />
-    <state width="1874" height="219" key="GridCell.Tab.2.center" timestamp="1579351471193">
+    <state width="1874" height="216" key="GridCell.Tab.2.bottom/0.27.1920.988@0.27.1920.988" timestamp="1581935457008" />
+    <state width="1874" height="216" key="GridCell.Tab.2.center" timestamp="1581935457008">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="219" key="GridCell.Tab.2.center/0.27.1920.988@0.27.1920.988" timestamp="1579351471193" />
-    <state width="1874" height="219" key="GridCell.Tab.2.left" timestamp="1579351471193">
+    <state width="1874" height="216" key="GridCell.Tab.2.center/0.27.1920.988@0.27.1920.988" timestamp="1581935457008" />
+    <state width="1874" height="216" key="GridCell.Tab.2.left" timestamp="1581935457008">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="219" key="GridCell.Tab.2.left/0.27.1920.988@0.27.1920.988" timestamp="1579351471193" />
-    <state width="1874" height="219" key="GridCell.Tab.2.right" timestamp="1579351471194">
+    <state width="1874" height="216" key="GridCell.Tab.2.left/0.27.1920.988@0.27.1920.988" timestamp="1581935457008" />
+    <state width="1874" height="216" key="GridCell.Tab.2.right" timestamp="1581935457008">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
-    <state width="1874" height="219" key="GridCell.Tab.2.right/0.27.1920.988@0.27.1920.988" timestamp="1579351471194" />
+    <state width="1874" height="216" key="GridCell.Tab.2.right/0.27.1920.988@0.27.1920.988" timestamp="1581935457008" />
     <state width="263" height="500" key="HiddenNamespacesPopup" timestamp="1579346771806">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
@@ -499,6 +488,10 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="254" y="27" width="760" height="790" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.988@0.27.1920.988" timestamp="1579956337605" />
+    <state x="269" y="122" width="1372" height="796" key="new project wizard" timestamp="1580832101308">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state x="269" y="122" width="1372" height="796" key="new project wizard/0.27.1920.988@0.27.1920.988" timestamp="1580832101308" />
     <state x="623" y="241" width="672" height="678" key="search.everywhere.popup" timestamp="1579344253604">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
@@ -538,9 +531,44 @@
           <option name="timeStamp" value="110" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/history/GetHistoryHandler.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/ivan/servlet/json/JsonUtils.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="114" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ivan/servlet/json/JsonUtils.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ivan/servlet/json/JsonUtils.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="116" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ivan/servlet/json/JsonUtils.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ivan/servlet/json/JsonUtils.java</url>
+          <line>161</line>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ivan/servlet/json/JsonUtils.java</url>
+          <line>174</line>
+          <option name="timeStamp" value="119" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/ErrorHandler.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ivan/servlet/controllers/ErrorHandler.java</url>
           <line>30</line>
-          <option name="timeStamp" value="111" />
+          <option name="timeStamp" value="129" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

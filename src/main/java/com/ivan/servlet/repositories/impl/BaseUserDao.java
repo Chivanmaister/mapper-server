@@ -194,7 +194,7 @@ public class BaseUserDao implements UserDao {
       resultSet = preparedStatement.executeQuery();
       exists = resultSet.next();
     } catch (SQLException e) {
-      throw new DaoException("Error adding user to database");
+      throw new DaoException("Error checking user to database");
     } finally {
       try {
         if (connection != null) {
